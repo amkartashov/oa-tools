@@ -42,7 +42,7 @@ def remove_oa_account(account_id):
     res = oapi.api_async_call_wait('pem.removeAccount', timeout=300, account_id=account_id)
 
 def is_prepare_query(query):
-    tables = ['ARDoc', 'AcceptedTerms', 'ADomain', 'UserToken', 'PayToolStatusHist']
+    tables = ['ARDoc', 'AcceptedTerms', 'ADomain', 'UserToken', 'PayToolStatusHist', 'EActivity', 'Payment']
     for t in tables:
         if query.startswith('DELETE FROM "{0}"'.format(t)):
             return True
